@@ -1,0 +1,26 @@
+	/*wejœcia*/
+		scanf("%d", &wierz);
+		mac = (char **)malloc(wierz * sizeof(char));
+		for (int i = 0; i < wierz; i++) {
+			mac[i] = (char *)malloc(wierz * sizeof(char));
+		}
+		for (int i = 0; i < wierz; i++) {
+			for (int j = 0; j < wierz; j++) {
+				scanf(" %c", &mac[i][j]);
+			}
+		}
+		/*wpisanie danych w macierz*/
+		for (int i = 0; i < wierz; i++) {
+			for (int j = 0; j < wierz; j++) {
+				cout << mac[i][j];
+			}
+			cout << endl;
+		}
+		if (pelny(mac, wierz) == true)printf("True\n");
+		else if (pelny(mac, wierz) == false)printf("false\n");
+		/*zwalnianie pamiêci*/
+		for (int i = 0; i < wierz; i++) {
+			free(mac[i]);
+		}
+		free(mac);
+	
